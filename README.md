@@ -1,7 +1,7 @@
 # Iris
 Go Learning Repository
 
-[![Go Version](https://img.shields.io/badge/go-1.25%2B-blue.svg)](https://go.dev/doc/install/)
+[![Go Version](https://img.shields.io/badge/go-1.25%2B-cyan.svg)](https://go.dev/doc/install/)
 
 ## Checklist
 Track your progress by checking off items as you learn, practice, and implement them in projects.
