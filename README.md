@@ -10,12 +10,12 @@ Track your progress by checking off items as you learn, practice, and implement 
 
 ### **Phase 1: Go Fundamentals**
 
-*   [ ] **Setup & Tooling**
-    *   [ ] Install Go
-    *   [ ] Configure your `$GOPATH` and `$GOROOT`
-    *   [ ] Set up your code editor (e.g., VS Code with Go extension)
-    *   [ ] Write and run "Hello, World!"
-    *   [ ] Learn `go run`, `go build`, `go fmt`, `go vet`
+*   [x] **Setup & Tooling**
+    *   [x] Install Go
+    *   [x] Configure your `$GOPATH` and `$GOROOT`
+    *   [x] Set up your code editor (e.g., VS Code with Go extension)
+    *   [x] Write and run "Hello, World!"
+    *   [x] Learn `go run`, `go build`, `go fmt`, `go vet`
 *   [ ] **Basic Syntax & Concepts**
     *   [ ] Packages and Imports
     *   [ ] Variables (`var`, `:=`) and Constants (`const`)
