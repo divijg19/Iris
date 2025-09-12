@@ -124,3 +124,38 @@ Track your progress by checking off items as you learn, practice, and implement 
 *   [ ] **Add Comprehensive Tests:** Go back to previous projects and add a robust suite of unit tests.
 *   [ ] **Microservice:** Create a small, single-purpose service (e.g., an authentication service) that communicates over gRPC or REST.
 *   [ ] **Contribute to an Open Source Project:** Find a beginner-friendly issue on a Go project and submit a pull request.
+
+---
+
+## Web Server usage (Web_Server) with Postman and cURL
+
+Run the example web server in `Web_Server/main.go` and hit it from Postman, cURL, or VS Code REST clients.
+
+Quick start (from repo root):
+
+```pwsh
+# Run the server
+go run ./Web_Server
+
+# In another terminal, try a few requests
+curl -X POST "http://localhost:8080/users" `
+         -H "Content-Type: application/json" `
+         -d '{"id":1,"name":"Alice","age":30}'
+
+curl "http://localhost:8080/users/1"
+
+curl -X DELETE "http://localhost:8080/users/1"
+```
+
+Postman (short version):
+- Create an Environment with `baseUrl = http://localhost:8080`.
+- Requests:
+    - POST `{{baseUrl}}/users` with JSON body `{ "id": 1, "name": "Alice", "age": 30 }`
+    - GET `{{baseUrl}}/users/1`
+    - DELETE `{{baseUrl}}/users/1`
+
+Notes:
+- Data is stored in-memory and resets on server restart.
+- Endpoints use Go's `net/http` ServeMux patterns: `POST /users`, `GET /users/{id}`, `DELETE /users/{id}`.
+
+More details (including VS Code REST/Thunder Client examples and troubleshooting): see `Web_Server/README.md`.
