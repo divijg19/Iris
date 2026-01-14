@@ -1,6 +1,4 @@
-<h1 align="center">`Iris`</h1>
-
-**Phone-first interactive portfolio and identity interface.**
+<h1 align="center">Iris: Mobile-first interactive portfolio and identity interface</h1>
 
 `Iris` is a mobile-first, installable web application that serves as the phone-oriented counterpart to my desktop portfolio, Lys.
 
