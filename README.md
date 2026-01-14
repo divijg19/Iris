@@ -94,9 +94,3 @@ It is not intended to replace detailed documentation or case studies, which rema
 Early-stage, actively evolving.
 
 The structure and foundations are stable; content and constellations will expand gradually.
-
----
-
-## License
-
-MIT
