@@ -1,4 +1,4 @@
-# `Iris`
+<h1 align="center">`Iris`</h1>
 
 **Phone-first interactive portfolio and identity interface.**
 
