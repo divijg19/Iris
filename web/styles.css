@@ -1,0 +1,266 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  --primary-color: #01589B;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: unset;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.main section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+header nav {
+  background-color: var(--primary-color);
+  height: 3em;
+  border-radius: 10px;
+  overflow: clip;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  padding-left: 2em;
+  padding-right: 2em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav a:hover {
+  background-color: #0005;
+}
+
+header nav div.active {
+  position: relative;
+}
+
+header nav div.active::before {
+  content: "";
+  display: block;
+  height: 2px;
+  border-radius: 1px;
+  position: absolute;
+  left: 20px;
+  bottom: 0.5em;
+  right: 20px;
+  background-color: white;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.counter button {
+  font-size: 2rem;
+  width: 2em;
+  height: 2em;
+  border: unset;
+  cursor: pointer;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.counter button:hover {
+  background-color: #0001;
+}
+
+.counter span {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  min-width: 2.5em;
+  color: var(--primary-color);
+  font-size: 4rem;
+  text-align: center;
+}
+
+ol {
+  max-width: 500px;
+}
+
+.ritual {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0b0b0c;
+  color: #eaeaf0;
+
+  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
+  cursor: pointer;
+  user-select: none;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: opacity 600ms ease;
+
+  --ritual-enter-duration: 700ms;
+  --ritual-enter-offset: 12px;
+  --ritual-enter-letter-from: 0.09em;
+}
+
+.ritual.ritual-phase-greeting {
+  --ritual-enter-duration: 650ms;
+  --ritual-enter-offset: 10px;
+}
+
+.ritual.ritual-phase-identity {
+  --ritual-enter-duration: 720ms;
+}
+
+.ritual.ritual-phase-purpose {
+  --ritual-enter-duration: 760ms;
+  --ritual-enter-offset: 14px;
+}
+
+.ritual.ritual-phase-invite {
+  --ritual-enter-duration: 720ms;
+}
+
+.ritual.ritual-phase-completion {
+  --ritual-enter-duration: 780ms;
+  --ritual-enter-offset: 16px;
+}
+
+.ritual.ritual--handoff {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ritual .ritual-scene {
+  width: min(720px, calc(100vw - 3rem));
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ritual .ritual-text {
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transform: translateY(0);
+  opacity: 1;
+  animation: ritual-enter var(--ritual-enter-duration) cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  will-change: transform, opacity, letter-spacing;
+}
+
+.ritual .ritual-affordance {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: rgba(234, 234, 240, 0.78);
+  opacity: 0.85;
+  animation: ritual-affordance-fade-in 900ms ease both;
+}
+
+.ritual .ritual-affordance-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(234, 234, 240, 0.9);
+  box-shadow: 0 0 0 0 rgba(234, 234, 240, 0.25);
+  animation: ritual-pulse 1400ms ease-in-out infinite;
+}
+
+.ritual .ritual-affordance-text {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes ritual-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ritual-enter-offset));
+    letter-spacing: var(--ritual-enter-letter-from);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.02em;
+  }
+}
+
+@keyframes ritual-affordance-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ritual-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 234, 240, 0.18);
+  }
+  55% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 10px rgba(234, 234, 240, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 234, 240, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ritual {
+    transition: none;
+  }
+
+  .ritual .ritual-text,
+  .ritual .ritual-affordance,
+  .ritual .ritual-affordance-dot {
+    animation: none;
+  }
+}
